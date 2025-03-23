@@ -664,29 +664,40 @@ a.more {
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
-.blog-section .post-entry .post-content-entry {
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 100%; */
+}
+.thumbnail img {
+  width: 100%;
+  height: 75%;
+}
+.bookreview-section .post-entry .post-content-entry {
   padding-left: 15px;
   padding-right: 15px;
 }
-.blog-section .post-entry .post-content-entry h3 {
+.bookreview-section .post-entry .post-content-entry h3 {
   font-size: 16px;
   margin-bottom: 0;
   font-weight: 600;
   margin-bottom: 7px;
 }
-.blog-section .post-entry .post-content-entry .meta {
+.bookreview-section .post-entry .post-content-entry .meta {
   font-size: 14px;
 }
-.blog-section .post-entry .post-content-entry .meta a {
+.bookreview-section .post-entry .post-content-entry .meta a {
   font-weight: 600;
 }
-.blog-section .post-entry:hover .post-thumbnail img,
-.blog-section .post-entry:focus .post-thumbnail img {
+.bookreview-section .post-entry:hover .post-thumbnail img,
+.bookreview-section .post-entry:focus .post-thumbnail img {
   opacity: 0.7;
 }
 
 .footer-section {
-  padding: 80px 0;
+  padding: 20px 0;
   background: #2e4057;
 }
 .footer-section .relative {
@@ -700,7 +711,6 @@ a.more {
   transition: 0.3s all ease;
 }
 .footer-section a:hover {
-  /* color: rgba(47, 47, 47, 0.5); */
   color: #c7b65e;
 }
 .footer-section .subscription-form {
@@ -730,7 +740,7 @@ a.more {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-color: #3b5d50;
+  border-color: #2e4057;
   -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -749,15 +759,7 @@ a.more {
 .footer-section .subscription-form .btn {
   border-radius: 10px !important;
 }
-.footer-section .sofa-img {
-  position: absolute;
-  top: -200px;
-  z-index: 1;
-  right: 0;
-}
-.footer-section .sofa-img img {
-  max-width: 380px;
-}
+
 .footer-section .links-wrap {
   margin-top: 0px;
 }
@@ -770,10 +772,22 @@ a.more {
   margin-bottom: 10px;
 }
 .footer-section .footer-logo-wrap .footer-logo {
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 600;
   text-decoration: none;
-  color: #3b5d50;
+  color: #fff7ee;
+  align-items: center;
+}
+.footer-log .logo-img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+.footer-logo > span {
+  opacity: 0.4;
+}
+.footer-paragraph {
+  color: #fff7ee;
 }
 .footer-section .custom-social li {
   margin: 2px;
@@ -785,8 +799,8 @@ a.more {
   text-align: center;
   line-height: 40px;
   display: inline-block;
-  background: #dce5e4;
-  color: #3b5d50;
+  background: #fff7ee;
+  color: #c7b65e;
   border-radius: 50%;
 }
 .footer-section .custom-social li a:hover {
@@ -799,7 +813,19 @@ a.more {
 .footer-section .border-top.copyright {
   font-size: 14px !important;
 }
+.custom-footer-text {
+  color: #f7b3cc; /* Set the desired text color */
+  font-size: 14px; /* Adjust the font size as needed */
+}
 
+.custom-footer-text a {
+  color: #c7b65e; /* Set the desired link color */
+  text-decoration: underline;
+}
+
+.custom-footer-text a:hover {
+  color: #ee583f; /* Set the desired hover color for links */
+}
 .untree_co-section {
   padding: 7rem 0;
 }
