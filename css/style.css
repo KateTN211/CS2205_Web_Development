@@ -173,14 +173,14 @@ a.more {
   margin-bottom: 30px;
 }
 .hero .hero-img-wrap {
-  position: relative;
+  position:relative;
 }
 .hero .hero-img-wrap img {
   position: relative;
   top: 0px;
   right: 0px;
   z-index: 2;
-  max-width: 780px;
+  max-width: 100%;
   left: -20px;
 }
 @media (min-width: 768px) {
