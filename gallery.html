@@ -228,6 +228,16 @@
           </div>
           <!-- End Column 4 -->
         </div>
+        <!-- button view cart -->
+        <div class="d-flex justify-content-center">
+          <button
+            class="btn btn-outline-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#cartModal"
+          >
+            View Cart
+          </button>
+        </div>
       </div>
     </div>
 
@@ -389,5 +399,45 @@
     <script src="js/custom.js"></script>
     <script src="js/subscribe.js"></script>
     <script src="js/cart.js"></script>
+
+    <!-- Shopping Cart Modal -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul id="cartItems" class="list-group">
+              <!-- Cart items will be dynamically added here -->
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="clearCartButton">
+              Clear Cart
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              id="processOrderButton"
+            >
+              Process Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
