@@ -92,5 +92,5 @@ function processOrder() {
     // Clear the cart after processing the order
     shoppingCart = [];
     updateCartModal();
-    window.location.href = "cart.html"; // Redirect to thank you page
+    alert("Thank you for your order!");
 }
