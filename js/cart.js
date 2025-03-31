@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("processOrderButton").addEventListener("click", () => {
         processOrder();
     });
-    // updateCartModal();
+    updateCartModal();
 });
 
 
