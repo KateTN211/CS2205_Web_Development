@@ -1,59 +1,47 @@
-// Initialize an empty shopping cart
+const { update } = require("three/examples/jsm/libs/tween.module.js");
+
 let shoppingCart = [];
 
-// Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", () => {
-    // Select all product items
     const productItems = document.querySelectorAll(".product-item");
-
-    // Add click event listener to each product item
     productItems.forEach((item) => {
         item.addEventListener("click", (event) => {
-            event.preventDefault(); // Prevent default link behavior
-
-            // Get the product title
+            event.preventDefault();
             const productTitle = item.querySelector(".product-title").textContent;
-
-            // Add the product to the shopping cart
             addToCart(productTitle);
-
-            // Update the cart modal
             updateCartModal();
         });
     });
 
-    // Add event listener for the "Clear Cart" button
     document.getElementById("clearCartButton").addEventListener("click", () => {
         clearCart();
     });
 
-    // Add event listener for the "Process Order" button
     document.getElementById("processOrderButton").addEventListener("click", () => {
         processOrder();
     });
+    // updateCartModal();
 });
 
-// Function to add an item to the shopping cart
+
 function addToCart(productName) {
-    // Check if the product is already in the cart
+    let shoppingCart = JSON.parse(sessionStorage.getItem("shoppingCart")) || [];
     const existingProduct = shoppingCart.find((item) => item.name === productName);
 
     if (existingProduct) {
-        // If the product exists, increase its quantity
         existingProduct.quantity += 1;
     } else {
-        // If the product doesn't exist, add it to the cart
         shoppingCart.push({ name: productName, quantity: 1 });
     }
 
-    // Notify the user
+    sessionStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
     alert(`Item added to cart: ${productName}`);
 }
 
-// Function to update the cart modal
 function updateCartModal() {
     const cartItemsContainer = document.getElementById("cartItems");
-    cartItemsContainer.innerHTML = ""; // Clear the current cart display
+    cartItemsContainer.innerHTML = "";
+    let shoppingCart = JSON.parse(sessionStorage.getItem("shoppingCart")) || [];
 
     if (shoppingCart.length === 0) {
         const emptyMessage = document.createElement("li");
@@ -75,22 +63,21 @@ function updateCartModal() {
     });
 }
 
-// Function to clear the cart
 function clearCart() {
-    shoppingCart = []; // Empty the cart
-    updateCartModal(); // Update the modal to reflect the empty cart
+    sessionStorage.removeItem("shoppingCart");
+    updateCartModal();
     alert("Cart is cleared!");
 }
 
-// Function to process the order
 function processOrder() {
+    let shoppingCart = JSON.parse(sessionStorage.getItem("shoppingCart")) || [];
+
     if (shoppingCart.length === 0) {
         alert("Your cart is empty. Add items before processing the order.");
         return;
     }
 
-    // Clear the cart after processing the order
-    shoppingCart = [];
+    sessionStorage.removeItem("shoppingCart");
     updateCartModal();
     alert("Thank you for your order!");
 }
