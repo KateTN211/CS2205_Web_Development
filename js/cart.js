@@ -1,5 +1,3 @@
-const { update } = require("three/examples/jsm/libs/tween.module.js");
-
 let shoppingCart = [];
 
 document.addEventListener("DOMContentLoaded", () => {
