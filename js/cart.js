@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("processOrderButton").addEventListener("click", () => {
         processOrder();
     });
-
-    // Uncomment this to initialize cart display on page load
     updateCartModal();
 });
 
@@ -113,3 +111,4 @@ function processOrder() {
     updateCartModal();
     alert("Thank you for your order!");
 }
+
